@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container" id="review-form">
+  <div class="row">
+    <form class="col s12" method="POST" action="">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="First Name" id="author_fname" name="author_fname" type="text" class="validate">
+          <label for="author_fname">Author</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="author_lname" name="author_lname" type="text" class="validate">
+          <label for="author_lname">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Title" id="book_title" type="text" class="validate">
+          <label for="book_title">Book Title</label>
+        </div>
+      </div>
+      <div class="input-field col s6">
+        <select>
+          <option value="" disabled selected>1-5</option>
+          <option value="1" name="rating">1</option>
+          <option value="2" name="rating">2</i></option>
+          <option value="3" name="rating">3</option>
+          <option value="4" name="rating">4</i></option>
+          <option value="5" name="rating">5</i></option>
+        </select>
+        <label>Rating</label>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="review" name="review"class="materialize-textarea"></textarea>
+          <label for="review">Review</label>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
