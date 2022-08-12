@@ -11,6 +11,7 @@ class Title(db.Model):
     def __repr__(self):
         return self.book_title
 
+
 class Author(db.Model):
     # schema for Author model
     id = db.Column(db.Integer, primary_key=True)
@@ -30,4 +31,6 @@ class Review(db.Model):
 
     def __repr__(self):
         return self
+
+
 
