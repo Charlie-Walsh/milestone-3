@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+    <div class="col6" id="home-heading">
+        <h1>Welcome to The Sanctum!</h1>
+    </div>
+    <div class="col6" id="intro">
+        <p>Enter the library to browse or leave a review for books in the Sci-Fi and Fantasy genres.</p>
+    </div>
+    <div class="col6 enter">
+        <a class="waves-effect waves-light btn-large" href="{{ url_for('books') }}">Browse</a>
+    </div>
+</div>
+
+{% endblock %}

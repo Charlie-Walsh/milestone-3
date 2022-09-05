@@ -5,8 +5,10 @@ class Title(db.Model):
     # schema for Title model
     id = db.Column(db.Integer, primary_key=True)
     book_title = db.Column(db.String(50), unique=True, nullable=False)
-    author_id = db.Column(db.Integer, db.ForeignKey(), nullable=False)
-    average_rating = db.Column(db.Integer, nullable = False)
+    author_id = db.Column(db.Integer, db.ForeignKey("author.id"), nullable=False)
+    average_rating = db.Column(db.Integer, nullable=False)
+    reviews = db.relationship("review", backref='title', cascade="all, delete",
+                              lazy=True)
 
     def __repr__(self):
         return self.book_title
@@ -19,7 +21,7 @@ class Author(db.Model):
     author_lname = db.Column(db.String(20), nullable=False)
 
     def __repr__(self):
-        return self
+        return f"Author - #{self.author_fname} #{self.author_lname}".format(self.author_fname, self.author_lname)
 
 
 class Review(db.Model):
@@ -27,10 +29,11 @@ class Review(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     review = db.Column(db.String(500), nullable=False)
     rating = db.Column(db.Integer, nullable=False)
-    title_id = db.Column(db.Integer, db.ForeignKey(), nullable=False)
+    title_id = db.Column(db.Integer, db.ForeignKey("title.id",
+                         ondelete="CASCADE"), nullable=False)
 
     def __repr__(self):
-        return self
+        return f"Review - #{self.review} Rating - #{self.rating}".format(self.review, self.rating)
 
 
 

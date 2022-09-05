@@ -2,6 +2,21 @@ body {
     background-color: beige;
 }
 
+#home-heading {
+    text-align: center;
+}
+
+#intro {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.enter {
+    text-align: center;
+    margin-top: 25%;
+    background-image: url('//sanctum/static/images/library.png');
+}
+
 #review-form {
     margin-top: 20px;
 }

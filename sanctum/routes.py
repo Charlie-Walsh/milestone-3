@@ -1,10 +1,11 @@
 from flask import render_template
 from sanctum import app, db
+from sanctum.models import Title, Author, Review
 
 
 @app.route("/")
 def home():
-    return render_template("base.html")
+    return render_template("home.html")
 
 
 @app.route("/search")
