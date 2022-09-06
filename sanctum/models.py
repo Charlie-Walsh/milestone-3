@@ -33,7 +33,5 @@ class Review(db.Model):
                          ondelete="CASCADE"), nullable=False)
 
     def __repr__(self):
-        return f"Review - #{self.review} Rating - #{self.rating}".format(self.review, self.rating)
-
-
+        return f"#Review - {self.review} | Rating - {self.rating}".format(self.review, self.rating)
 

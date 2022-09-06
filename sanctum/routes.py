@@ -18,6 +18,6 @@ def books():
     return render_template("books.html")
 
 
-@app.route("/review")
+@app.route("/review", methods=['GET', 'POST'])
 def review():
     return render_template("review.html")
