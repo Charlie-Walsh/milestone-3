@@ -27,7 +27,7 @@ class Author(db.Model):
 class Review(db.Model):
     # schema for Review model
     id = db.Column(db.Integer, primary_key=True)
-    review = db.Column(db.String(500), nullable=False)
+    review = db.Column(db.Text, nullable=False)
     rating = db.Column(db.Integer, nullable=False)
     title_id = db.Column(db.Integer, db.ForeignKey("title.id",
                          ondelete="CASCADE"), nullable=False)
