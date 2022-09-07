@@ -1,6 +1,6 @@
 <h1 style="text-align:center">The Sanctum</h1>
 
-The Sanctum is a place for bookworms like myself to read and add reviews for sci-fi and fantasy novels. Anyone looking to find a new series or just a short story can find guidence here or provide a helpful review for someone looking for something new. This will help people make an informed decision when deciding whether or not to purchase a book they may have had their eye on for a while or discover a new author they will really enjoy. In my own personal experience I have mostly chosen what books i read by peer recommendation or word of mouth. This space will allow for that on a scale available to anyone and everyone.
+The Sanctum is a place for bookworms like myself to read and add reviews for sci-fi and fantasy novels. Anyone looking to find a new series or just a short story can find guidence here or provide a helpful review for someone looking for something new. This will help people make an informed decision when deciding whether or not to purchase a book they may have had their eye on for a while or discover a new author they will really enjoy. In my own personal experience I have mostly chosen what books i read by peer recommendation or word of mouth. This space will allow for that on a grander scale available to anyone and everyone.
 <hr>
 
 # User Experience
@@ -71,6 +71,9 @@ Review Form
  - Pylint bug encountered using flask-sqlAlchemy giving "Instance of 'SQLAlchemy' has no 'Column' member" error. This is a known issue and requires you to crash the plug in to remove it. I didn't want to risk messing with this too much so I am just ignoring it so far. I could put a #noqa comment on every one but that seems a bit redundant for now.
 
  - My server is not responding for the database locally. The error is something to do with the port 5432 being in use by gitpod. pg_lsclusters command is showing postgres as down. So far I have been unable to test the forms functionality and actually add any data to the database.
+
+ - After deploying to Heroku app crashes. According to the log it appears to be looking for a favicon.<br>
+ 'at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=the-sanctum-cw.herokuapp.com request_id=4285cfd9-7a50-4e16-8a67-f039d5b80761 fwd="92.233.104.68" dyno= connect= service= status=503 bytes= protocol=https'
 
 <hr>
 
