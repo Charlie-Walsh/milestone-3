@@ -31,6 +31,17 @@ I have decided to keep the design simple and clean in order to to make it easy f
 
 ### Wireframes
 
+Home Page
+![Home Page](/sanctum/static/images/home.png)
+Books Page
+![Books Page](/sanctum/static/images/books.png)
+Review Form
+![Review Page](/sanctum/static/images/review.png)
+
+### Models
+
+![Models](/sanctum/static/images/models.png)
+
 <hr>
 
 
@@ -47,7 +58,6 @@ I have decided to keep the design simple and clean in order to to make it easy f
 
  - Materialize
  - Font Awesome
- - Google Fonts
  - Flask
  - postgresql
  - SQLAlchemy
@@ -61,3 +71,8 @@ I have decided to keep the design simple and clean in order to to make it easy f
  - Pylint bug encountered using flask-sqlAlchemy giving "Instance of 'SQLAlchemy' has no 'Column' member" error. This is a known issue and requires you to crash the plug in to remove it. I didn't want to risk messing with this too much so I am just ignoring it so far. I could put a #noqa comment on every one but that seems a bit redundant for now.
 
  - My server is not responding for the database locally. The error is something to do with the port 5432 being in use by gitpod. pg_lsclusters command is showing postgres as down.
+
+<hr>
+
+# Deployment
+
