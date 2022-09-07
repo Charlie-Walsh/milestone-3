@@ -7,7 +7,7 @@ class Title(db.Model):
     book_title = db.Column(db.String(50), unique=True, nullable=False)
     author_id = db.Column(db.Integer, db.ForeignKey("author.id"), nullable=False)
     average_rating = db.Column(db.Integer, nullable=False)
-    reviews = db.relationship("review", backref='title', cascade="all, delete",
+    reviews = db.relationship("Review", backref='title', cascade="all, delete",
                               lazy=True)
 
     def __repr__(self):
