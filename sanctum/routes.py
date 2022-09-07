@@ -15,7 +15,8 @@ def search():
 
 @app.route("/books")
 def books():
-    return render_template("books.html")
+    books = list(Title.query.order_by(Title.book_title).all())
+    return render_template("books.html", books=books)
 
 
 @app.route("/review", methods=['GET', 'POST'])
