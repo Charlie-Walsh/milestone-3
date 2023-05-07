@@ -17,8 +17,8 @@ class Title(db.Model):
 class Author(db.Model):
     # schema for Author model
     id = db.Column(db.Integer, primary_key=True)
-    author_fname = db.Column(db.String(20), nullable=False)
-    author_lname = db.Column(db.String(20), nullable=False)
+    author_fname = db.Column(db.String(50), nullable=False)
+    author_lname = db.Column(db.String(50), nullable=False)
 
     def __repr__(self):
         return f"Author - #{self.author_fname} #{self.author_lname}".format(self.author_fname, self.author_lname)
