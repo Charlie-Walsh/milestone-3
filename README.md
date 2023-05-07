@@ -70,10 +70,12 @@ Review Form
 
  - Pylint bug encountered using flask-sqlAlchemy giving "Instance of 'SQLAlchemy' has no 'Column' member" error. This is a known issue and requires you to crash the plug in to remove it. I didn't want to risk messing with this too much so I am just ignoring it so far. I could put a #noqa comment on every one but that seems a bit redundant for now.
 
- - My server is not responding for the database locally. The error is something to do with the port 5432 being in use by gitpod. pg_lsclusters command is showing postgres as down. So far I have been unable to test the forms functionality and actually add any data to the database.
+ - My server is not responding for the database locally. The error is something to do with the port 5432 being in use by gitpod. pg_lsclusters command is showing postgres as down. So far I have been unable to test the forms functionality and actually add any data to the database. *Solution* - I'd forgotten to set_pg.
 
  - After deploying to Heroku app crashes. According to the log it appears to be looking for a favicon.<br>
  'at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=the-sanctum-cw.herokuapp.com request_id=4285cfd9-7a50-4e16-8a67-f039d5b80761 fwd="92.233.104.68" dyno= connect= service= status=503 bytes= protocol=https'
+
+ - db.creat_all() is throwing a RunTimeError: Working outside if application context. *Solution* - Installed previous version of flask-sqlalchemy psycopg2.
 
 <hr>
 
