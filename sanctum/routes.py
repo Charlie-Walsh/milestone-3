@@ -24,7 +24,7 @@ def review():
     if request.method == 'POST':
         author_fname = Author(author_fname=request.form.get('author_fname'))
         db.session.add(author_fname)
-        author_lname = Author(author_lname=request.form.get('author_last'))
+        author_lname = Author(author_lname=request.form.get('author_lname'))
         db.session.add(author_lname)
         book_title = Title(book_title=request.form.get('book_title'))
         db.session.add(book_title)
