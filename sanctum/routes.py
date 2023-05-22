@@ -15,17 +15,17 @@ def search():
 
 @app.route("/books")
 def books():
-    books = list(Title.query.order_by(Title.book_title).all())
-    return render_template("books.html", books=books)
+    library = list(Title.query.order_by(Title.book_title).all())
+    return render_template("books.html", books=library)
 
 
 @app.route("/review", methods=['GET', 'POST'])
 def review():
     if request.method == 'POST':
-        author_fname = Author(author_fname=request.form.get('author_fname'))
-        db.session.add(author_fname)
-        author_lname = Author(author_lname=request.form.get('author_lname'))
-        db.session.add(author_lname)
+        author = Author(author_fname=request.form.get('author_fname'),
+        author_lname=request.form.get('author_lname'))
+        db.session.add(author)
+        db.session.commit()
         book_title = Title(book_title=request.form.get('book_title'))
         db.session.add(book_title)
         rating = Review(rating=request.form.get('rating'))

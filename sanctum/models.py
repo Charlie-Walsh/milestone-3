@@ -6,12 +6,12 @@ class Title(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     book_title = db.Column(db.String(50), unique=True, nullable=False)
     author_id = db.Column(db.Integer, db.ForeignKey("author.id"), nullable=False)
-    average_rating = db.Column(db.Integer, nullable=False)
     reviews = db.relationship("Review", backref='title', cascade="all, delete",
                               lazy=True)
+    authors = db.relationship("Author")
 
     def __repr__(self):
-        return self.book_title
+        return f"Title - #{self.book_title} #{self.author_id}".format(self.book_title, self.author_id)
 
 
 class Author(db.Model):

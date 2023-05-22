@@ -77,7 +77,7 @@ Review Form
 
  - db.creat_all() is throwing a RunTimeError: Working outside if application context. *Solution* - Installed previous version of flask-sqlalchemy psycopg2.
 
- - author-lname returning null value, causing an error due to null constraint. *Solution* - I was commiting the form session to the database prematurely after each entry, causing author-lname to be a null value. Refactored POST code to commit at the end only.
+ - author-lname returning null value, causing an error due to null constraint. *Solution attempt* - I was commiting the form session to the database prematurely after each entry, causing author-lname to be a null value. Refactored POST code to commit at the end only. After testing, author_fname is now causing a null value. Further debug needed.
  
 
 <hr>
