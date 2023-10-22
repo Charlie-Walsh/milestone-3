@@ -47,6 +47,18 @@ def edit_review(review_id):
     return render_template("edit-review.html", review=review )
 
 
+
+@app.route("/reviews/delete/<int:review_id>", methods=['GET','POST'])
+def delete_review(review_id):
+    review = Review.query.get(review_id)
+    print(review)
+    if request.method == 'POST':
+        db.session.delete(review)
+        db.session.commit()
+        return redirect(url_for('reviews'))
+    return render_template("delete-review.html", review=review )
+
+
 @app.route("/reviews", methods=['GET', 'POST'])
 def reviews():
     books = list(Title.query.order_by(Title.book_title).all())
