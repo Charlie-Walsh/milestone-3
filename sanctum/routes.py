@@ -13,6 +13,7 @@ def search():
     return render_template("search.html")
 
 
+
 @app.route("/books")
 def books():
     library = list(Title.query.order_by(Title.book_title).all())
@@ -35,3 +36,14 @@ def review():
         db.session.commit()
         return redirect(url_for('books'))
     return render_template("review.html")
+
+
+@app.route("/reviews", methods=['GET', 'POST'])
+def reviews():
+    books = list(Title.query.order_by(Title.book_title).all())
+    reviews = list(Review.query.all())
+    if request.method == 'POST':
+        db.session.add(Review(review=request.form.get('review'), rating=request.form.get('rating'), title_id=request.form.get('book_id')))
+        db.session.commit()
+        return redirect(url_for('reviews'))
+    return render_template("reviews.html", books=books, reviews=reviews)
