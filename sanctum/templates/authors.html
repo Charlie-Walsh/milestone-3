@@ -1,0 +1,54 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2 class="heading">Add an Author</h2>
+
+<div class="container" id="author-form">
+	<div class="row">
+		<form class="col s12" method="POST" action="{{ url_for('authors') }}">
+			<div class="row">
+				<div class="input-field col s6">
+					<input
+						placeholder="First Name"
+						id="author_fname"
+						name="author_fname"
+						type="text"
+						class="validate"
+					/>
+					<label for="author_fname">First Name</label>
+				</div>
+				<div class="input-field col s6">
+					<input
+						id="author_lname"
+						placeholder="First Name"
+						name="author_lname"
+						type="text"
+						class="validate"
+					/>
+					<label for="author_lname">Last Name</label>
+				</div>
+			</div>
+			<div class="row">
+				<div>
+					<button
+						class="btn waves-effect waves-light"
+						type="submit"
+						name="action"
+						>Submit
+						<i class="material-icons right"></i>
+					</button>
+				</div>
+			</div>
+		</form>
+		<div class="row">
+			{% if authors %} {% for author in authors %}
+			<p>
+				<span>{{author.author_fname}}</span>
+				<span>{{author.author_lname}}</span>
+			</p>
+			{% endfor %} {% else %}
+			<p>There are no authors added - please add some using the form above.</p>
+			{% endif %}
+		</div>
+	</div>
+</div>
+{% endblock %}

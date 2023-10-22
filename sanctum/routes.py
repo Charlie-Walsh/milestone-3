@@ -12,7 +12,16 @@ def home():
 def search():
     return render_template("search.html")
 
-
+@app.route("/authors", methods=['GET', 'POST'])
+def authors():
+    if request.method == 'POST':
+        author = Author(author_fname=request.form.get('author_fname'),
+        author_lname=request.form.get('author_lname'))
+        db.session.add(author)
+        db.session.commit()
+        return redirect(url_for('authors'))
+    authors = list(Author.query.all())        
+    return render_template("authors.html", authors=authors)
 
 @app.route("/books")
 def books():
