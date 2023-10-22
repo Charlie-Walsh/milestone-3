@@ -12,6 +12,7 @@ def home():
 def search():
     return render_template("search.html")
 
+
 @app.route("/authors", methods=['GET', 'POST'])
 def authors():
     if request.method == 'POST':
@@ -22,6 +23,7 @@ def authors():
         return redirect(url_for('authors'))
     authors = list(Author.query.all())        
     return render_template("authors.html", authors=authors)
+
 
 @app.route("/books", methods=['GET', 'POST'])
 def books():
@@ -34,22 +36,15 @@ def books():
     return render_template("books.html", books=books, authors=authors)
 
 
-@app.route("/review", methods=['GET', 'POST'])
-def review():
+@app.route("/reviews/edit/<int:review_id>", methods=['GET','POST'])
+def edit_review(review_id):
+    review = Review.query.get(review_id)
     if request.method == 'POST':
-        author = Author(author_fname=request.form.get('author_fname'),
-        author_lname=request.form.get('author_lname'))
-        db.session.add(author)
+        review.review = request.form.get('review')
+        review.rating = request.form.get('rating')
         db.session.commit()
-        book_title = Title(book_title=request.form.get('book_title'))
-        db.session.add(book_title)
-        rating = Review(rating=request.form.get('rating'))
-        db.session.add(rating)
-        book_review = Review(review=request.form.get('review'))
-        db.session.add(book_review)
-        db.session.commit()
-        return redirect(url_for('books'))
-    return render_template("review.html")
+        return redirect(url_for('reviews'))
+    return render_template("edit-review.html", review=review )
 
 
 @app.route("/reviews", methods=['GET', 'POST'])
