@@ -9,12 +9,72 @@
     </div>
 </div>
 
-<div class="row">
-    {% for book in books %}
-
-    <h3>{{ book.book_title }}</h3>
-
-    {% endfor %}
+<div class="container" id="author-form">
+	<div class="row">
+		{% if authors %}
+		<form class="col s12" method="POST" action="{{ url_for('books') }}">
+            <h2>Add Books</h2>
+			<div class="row">
+				<div class="input-field col s6">
+					<input
+						placeholder="Title"
+						id="book_title"
+						name="book_title"
+						type="text"
+						class="validate"
+					/>
+					<label for="book_title">Title</label>
+				</div>
+			</div>
+            <div class="row">
+				{% if authors %}
+				<label for="author"> Select Author </label>
+				<select id="author" name="author_id">
+					{% for author in authors %}
+					<option value="{{author.id}}"
+						>{{author.author_fname}} {{author.author_lname}}</option
+					>
+					{% endfor %}
+				</select>
+				{% else %}
+				<p
+					>There are no authors added - please add some using the form above.</p
+				>
+				{% endif %}
+			</div>
+            <div class="row">
+				<div>
+					<button
+						class="btn waves-effect waves-light"
+						type="submit"
+						name="action"
+						>Submit
+						<i class="material-icons right"></i>
+					</button>
+				</div>
+			</div>
+		</form>
+        <div class="row">
+            {% if books %} 
+                <h2>Existing Books</h2>
+                {% for book in books %}
+                <p>
+                    <span>{{book.book_title}}</span>
+                    {% for author in authors %}
+                        {% if book.author_id == author.id %}
+                            <span>Written by: {{author.author_fname}} {{author.author_lname}}</span>
+                        {% endif %}
+                    {% endfor %}
+                </p>
+                {% endfor %} 
+            {% else %}
+                <p>There are no books added - please add some using the form above.</p>
+            {% endif %}
+        </div>
+		{% else %}
+		<p>You can't add a book until you've added some authors!</p>
+		{% endif %}
+	</div>
 </div>
 
 {% endblock %}
