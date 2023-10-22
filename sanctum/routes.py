@@ -61,3 +61,9 @@ def reviews():
         db.session.commit()
         return redirect(url_for('reviews'))
     return render_template("reviews.html", books=books, reviews=reviews)
+
+
+@app.route("/reviews/view/<int:review_id>", methods=['GET'])
+def review(review_id):
+    review = Review.query.get(review_id)
+    return render_template("view-review.html", review=review )
