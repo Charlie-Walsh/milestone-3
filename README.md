@@ -42,6 +42,11 @@ Review Form
 
 ![Models](/sanctum/static/images/models.png)
 
+
+### Changes
+
+As I've gotten deeper into the creation of this site I have had to make a few changes to my original vision. I intended to have the form for submitting a review all on one page but that has felt clunky and a slog for the user. Instead I have decided to go with a more guided path for submiting data into the database, requiring the user to browse and either add to or create a new entry in the library. As the database grows this will be less of a factor as the number of authors and books increase and reviews can be added to existing entries.
+
 <hr>
 
 
