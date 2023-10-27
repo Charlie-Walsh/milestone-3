@@ -19,7 +19,7 @@
 				<div class="input-field col s6">
 					<input
 						id="author_lname"
-						placeholder="First Name"
+						placeholder="Last Name"
 						name="author_lname"
 						type="text"
 						class="validate"
@@ -39,16 +39,15 @@
 				</div>
 			</div>
 		</form>
-		<div class="row">
-			{% if authors %} {% for author in authors %}
-			<p>
-				<span>{{author.author_fname}}</span>
-				<span>{{author.author_lname}}</span>
-			</p>
-			{% endfor %} {% else %}
-			<p>There are no authors added - please add some using the form above.</p>
-			{% endif %}
-		</div>
+	</div>
+	<div class="row">
+		{% if authors %} {% for author in authors %}
+		<p class="author card-panel teal lighten-2">
+			<span>{{author.author_fname}} {{author.author_lname}}</span>
+		</p>
+		{% endfor %} {% else %}
+		<p>There are no authors added - please add some using the form above.</p>
+		{% endif %}
 	</div>
 </div>
 {% endblock %}

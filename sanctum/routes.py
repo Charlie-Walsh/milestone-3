@@ -30,7 +30,7 @@ def books():
         db.session.add(Title(book_title = request.form.get('book_title'), author_id = request.form.get('author_id')))
         db.session.commit()
         return redirect(url_for('books'))
-    books = list(Title.query.all())
+    books = list(Title.query.order_by(Title.book_title).all())
     authors = list(Author.query.all())       
     return render_template("books.html", books=books, authors=authors)
 

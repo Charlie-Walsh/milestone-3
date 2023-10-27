@@ -25,3 +25,17 @@ body {
 #review-form {
     margin-top: 20px;
 }
+
+.book {
+    text-transform: uppercase;
+}
+
+.author {
+    margin-left: 5%;
+    text-transform: capitalize;
+}
+
+.card-panel {
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
