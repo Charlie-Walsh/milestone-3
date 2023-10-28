@@ -1,13 +1,13 @@
 {% extends 'base.html' %} {% block content %}
 
 <h1 class="heading">Authors</h1>
-
+<p class="text-center">Please check the list before adding an author.</p>
 <div class="container" id="author-form">
 	<div class="row">
 		<h2 class="sub-heading">Add an Author</h2>
 		<form class="col s12" method="POST" action="{{ url_for('authors') }}">
 			<div class="row">
-				<div class="input-field col s12 m6 ">
+				<div class="input-field col s12 no-padding">
 					<input
 						placeholder="First Name"
 						id="author_fname"
@@ -17,7 +17,7 @@
 					/>
 					<label for="author_fname">First Name</label>
 				</div>
-				<div class="input-field col s12 m6 ">
+				<div class="input-field col s12 no-padding">
 					<input
 						id="author_lname"
 						placeholder="Last Name"
