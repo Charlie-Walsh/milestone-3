@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h2 class="heading">Books</h2>
+<h1 class="heading">Books</h1>
 
 <div class="row">
     <div class="col6 review-button">
@@ -12,10 +12,10 @@
 <div class="container" id="author-form">
 	<div class="row">
 		{% if authors %}
+		<h2 class="subhdg">Add A Book</h2>
 		<form class="col s12" method="POST" action="{{ url_for('books') }}">
-            <h2>Add A Book</h2>
 			<div class="row">
-				<div class="input-field col s6">
+				<div class="input-field">
 					<input
 						placeholder="Title"
 						id="book_title"
