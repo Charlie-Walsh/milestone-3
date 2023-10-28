@@ -11,11 +11,11 @@
 			method="POST"
 			action="{{ url_for('delete_review', review_id=review.id) }}"
 		>
-			<p>
+			<p class="text-center">
 				Are you sure you wish to delete the review for {{review.title.book_title}}?
 			</p>
 			<div class="row">
-				<div>
+				<div class="submit">
 					<button
 						class="btn waves-effect waves-light"
 						type="submit"
