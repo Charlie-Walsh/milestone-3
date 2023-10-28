@@ -1,9 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 
-<h2 class="heading">Add an Author</h2>
+<h1 class="heading">Authors</h1>
 
 <div class="container" id="author-form">
 	<div class="row">
+		<h2>Add an Author</h2>
 		<form class="col s12" method="POST" action="{{ url_for('authors') }}">
 			<div class="row">
 				<div class="input-field col s6">
@@ -43,7 +44,7 @@
 	<div class="row">
 		{% if authors %} {% for author in authors %}
 		<p class="author card-panel teal lighten-2">
-			<span>{{author.author_fname}} {{author.author_lname}}</span>
+			<span><strong>{{author.author_fname}} {{author.author_lname}}</strong></span>
 		</p>
 		{% endfor %} {% else %}
 		<p>There are no authors added - please add some using the form above.</p>

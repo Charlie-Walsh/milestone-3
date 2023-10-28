@@ -12,6 +12,7 @@ def home():
 def search():
     return render_template("search.html")
 
+
 @app.route("/authors", methods=['GET', 'POST'])
 def authors():
     if request.method == 'POST':
@@ -20,21 +21,22 @@ def authors():
         db.session.add(author)
         db.session.commit()
         return redirect(url_for('authors'))
-    authors = list(Author.query.all())        
+    authors = list(Author.query.order_by(Author.author_lname).all())       
     return render_template("authors.html", authors=authors)
 
 
 @app.route("/books", methods=['GET', 'POST'])
 def books():
     if request.method == 'POST':
-        db.session.add(Title(book_title = request.form.get('book_title'), author_id = request.form.get('author_id')))
+        db.session.add(Title(book_title=request.form.get('book_title'), author_id=request.form.get('author_id')))
         db.session.commit()
         return redirect(url_for('books'))
     books = list(Title.query.order_by(Title.book_title).all())
     authors = list(Author.query.all())       
     return render_template("books.html", books=books, authors=authors)
 
-@app.route("/reviews/edit/<int:review_id>", methods=['GET','POST'])
+
+@app.route("/reviews/edit/<int:review_id>", methods=['GET', 'POST'])
 def edit_review(review_id):
     review = Review.query.get(review_id)
     if request.method == 'POST':
@@ -42,9 +44,10 @@ def edit_review(review_id):
         review.rating = request.form.get('rating')
         db.session.commit()
         return redirect(url_for('reviews'))
-    return render_template("edit-review.html", review=review )
+    return render_template("edit-review.html", review=review)
 
-@app.route("/reviews/delete/<int:review_id>", methods=['GET','POST'])
+
+@app.route("/reviews/delete/<int:review_id>", methods=['GET', 'POST'])
 def delete_review(review_id):
     review = Review.query.get(review_id)
     print(review)
@@ -52,19 +55,21 @@ def delete_review(review_id):
         db.session.delete(review)
         db.session.commit()
         return redirect(url_for('reviews'))
-    return render_template("delete-review.html", review=review )
+    return render_template("delete-review.html", review=review)
+
 
 @app.route("/reviews", methods=['GET', 'POST'])
 def reviews():
-    books = list(Title.query.order_by(Title.book_title).all())
-    reviews = list(Review.query.all())
+    books = list(Title.query.all())
+    reviews = list(Review.query.order_by(Review.title_id).all())
     if request.method == 'POST':
-        db.session.add(Review(review = request.form.get('review'), rating = request.form.get('rating'), title_id = request.form.get('book_id')))
+        db.session.add(Review(review=request.form.get('review'), rating=request.form.get('rating'), title_id=request.form.get('book_id')))
         db.session.commit()
         return redirect(url_for('reviews'))
-    return render_template("reviews.html", books=books, reviews=reviews )
+    return render_template("reviews.html", books=books, reviews=reviews)
+
 
 @app.route("/reviews/view/<int:review_id>", methods=['GET'])
 def review(review_id):
     review = Review.query.get(review_id)
-    return render_template("view-review.html", review=review )
+    return render_template("view-review.html", review=review)

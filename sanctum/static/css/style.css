@@ -42,4 +42,10 @@ body {
 
 .crud {
     color: beige;
+    padding: 2%;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 10px;
 }
