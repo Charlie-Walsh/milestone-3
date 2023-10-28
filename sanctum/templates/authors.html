@@ -4,10 +4,10 @@
 
 <div class="container" id="author-form">
 	<div class="row">
-		<h2>Add an Author</h2>
+		<h2 class="sub-heading">Add an Author</h2>
 		<form class="col s12" method="POST" action="{{ url_for('authors') }}">
 			<div class="row">
-				<div class="input-field col s6">
+				<div class="input-field col s12 m6 ">
 					<input
 						placeholder="First Name"
 						id="author_fname"
@@ -17,7 +17,7 @@
 					/>
 					<label for="author_fname">First Name</label>
 				</div>
-				<div class="input-field col s6">
+				<div class="input-field col s12 m6 ">
 					<input
 						id="author_lname"
 						placeholder="Last Name"
@@ -29,7 +29,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div>
+				<div class="submit">
 					<button
 						class="btn waves-effect waves-light"
 						type="submit"

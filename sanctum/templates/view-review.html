@@ -2,15 +2,15 @@
 {% block content %}
    {% if review %}
    <h2 class="heading">Review for {{review.title.book_title}}</h2>
-   <div class="container">
-      <div class="row author">
-         Author: {{review.title.authors.author_fname}} {{review.title.authors.author_lname}}
+   <div class="container card-panel teal lighten-2 view-review-card">
+      <div class="row view-review-author">
+         <p>Author: {{review.title.authors.author_fname}} {{review.title.authors.author_lname}}</p>
       </div>
       <div class="row">
-         Rating: {{review.rating}}
+         <p>{{review.rating}}/5</p>
       </div>
       <div class="row">
-         Review: <i>{{review.review}}</i>
+         <p><i>{{review.review}}</i></p>
       </div>
    </div>
    {% else %}

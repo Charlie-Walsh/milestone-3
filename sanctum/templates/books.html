@@ -12,7 +12,7 @@
 <div class="container" id="author-form">
 	<div class="row">
 		{% if authors %}
-		<h2 class="subhdg">Add A Book</h2>
+		<h2 class="sub-heading">Add A Book</h2>
 		<form class="col s12" method="POST" action="{{ url_for('books') }}">
 			<div class="row">
 				<div class="input-field">
@@ -43,9 +43,9 @@
 				{% endif %}
 			</div>
             <div class="row">
-				<div>
+				<div class="submit">
 					<button
-						class="btn waves-effect waves-light"
+						class="submit btn waves-effect waves-light"
 						type="submit"
 						name="action"
 						>Submit
@@ -56,7 +56,7 @@
 		</form>
         <div class="row">
             {% if books %} 
-                <h2>Existing Books</h2>
+                <h2 class="sub-heading">Existing Books</h2>
                 {% for book in books %}
                 <div class="card-panel teal lighten-2">
                     <p class="book"><strong>{{book.book_title}}</strong></p>

@@ -9,7 +9,7 @@
 			method="POST"
 			action="{{ url_for('edit_review', review_id=review.id) }}"
 		>
-		<h3>Review for {{review.title.book_title}}</h3>
+		<h3 class="sub-heading">Review for {{review.title.book_title}}</h3>
 		<div class="input-field col s6">
 			<select id="rating" name="rating">
 				<option value="" disabled>1-5</option>
@@ -30,7 +30,7 @@
 			</div>
 		 </div>
 			<div class="row">
-				<div>
+				<div class="submit">
 					<button
 						class="btn waves-effect waves-light"
 						type="submit"

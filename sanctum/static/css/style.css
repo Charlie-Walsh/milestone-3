@@ -49,3 +49,33 @@ body {
     text-align: center;
     margin-top: 10px;
 }
+
+.view-review-author {
+    text-transform: capitalize;
+}
+
+.view-review-card {
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 576px) {
+    .sub-heading{
+        text-align: center;
+    }
+
+    .submit{
+        text-align: center;
+    }
+  }
+  
+@media screen and (max-width: 768px) {
+    
+  }
+  
+@media screen and (max-width: 992px) {
+    
+  }
+  
+@media screen and (max-width: 1200px) {
+    
+  }
