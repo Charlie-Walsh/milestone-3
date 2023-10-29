@@ -1,34 +1,80 @@
-{% extends 'base.html' %} {% block content %} <h1 class="heading">Books</h1>
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 class="heading">Books</h1>
+
 <div class="row">
-  <div class="col6 review-button">
-    <a class="waves-effect waves-light btn" href="{{ url_for('reviews') }}">Write a Review</a>
-  </div>
+    <div class="col6 review-button">
+        <a class="waves-effect waves-light btn" href="{{ url_for('reviews') }}">Write a Review</a>
+    </div>
 </div>
+
 <div class="container" id="author-form">
-  <div class="row"> {% if authors %} <h2 class="sub-heading">Add A Book</h2>
-    <form class="col s12" method="POST" action="{{ url_for('books') }}">
-      <div class="row">
-        <div class="input-field">
-          <input placeholder="Title" id="book_title" name="book_title" type="text" class="validate" />
-          <label for="book_title">Title</label>
+	<div class="row">
+		{% if authors %}
+		<h2 class="sub-heading">Add A Book</h2>
+		<form class="col s12" method="POST" action="{{ url_for('books') }}">
+			<div class="row">
+				<div class="input-field">
+					<input
+						placeholder="Title"
+						id="book_title"
+						name="book_title"
+						type="text"
+						class="validate"
+					/>
+					<label for="book_title">Title</label>
+				</div>
+			</div>
+            <div class="row">
+				{% if authors %}
+				<label for="author"> Select Author </label>
+				<select id="author" name="author_id">
+					{% for author in authors %}
+					<option class="author" value="{{author.id}}"
+						>{{author.author_fname}} {{author.author_lname}}</option
+					>
+					{% endfor %}
+				</select>
+				{% else %}
+				<p
+					>There are no authors added - please add some using the form above.</p
+				>
+				{% endif %}
+			</div>
+            <div class="row">
+				<div class="submit">
+					<button
+						class="submit btn waves-effect waves-light"
+						type="submit"
+						name="action"
+						>Submit
+						<i class="material-icons right"></i>
+					</button>
+				</div>
+			</div>
+		</form>
+        <div class="row">
+            {% if books %} 
+                <h2 class="sub-heading">Existing Books</h2>
+                {% for book in books %}
+                <div class="card-panel teal lighten-2">
+                    <p class="book"><strong>{{book.book_title}}</strong></p>
+                    {% for author in authors %}
+                        {% if book.author_id == author.id %}
+                            <p class="author"><i>Written by: {{author.author_fname}} {{author.author_lname}}</i></p>
+                        {% endif %}
+                    {% endfor %}
+				</div>
+                {% endfor %} 
+            {% else %}
+                <p>There are no books added - please add some using the form above.</p>
+            {% endif %}
         </div>
-      </div>
-      <div class="row"> {% if authors %} <label for="author"> Select Author </label>
-        <select id="author" name="author_id"> {% for author in authors %} <option class="author" value="{{author.id}}">{{author.author_fname}} {{author.author_lname}}</option> {% endfor %} </select> {% else %} <p>There are no authors added - please add some using the form above.</p> {% endif %}
-      </div>
-      <div class="row">
-        <div class="submit">
-          <button class="submit btn waves-effect waves-light" type="submit" name="action">Submit <i class="material-icons right"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-    <div class="row"> {% if books %} <h2 class="sub-heading">Existing Books</h2> {% for book in books %} <div class="card-panel teal lighten-2">
-        <p class="book">
-          <strong>{{book.book_title}}</strong>
-        </p> {% for author in authors %} {% if book.author_id == author.id %} <p class="author">
-          <i>Written by: {{author.author_fname}} {{author.author_lname}}</i>
-        </p> {% endif %} {% endfor %}
-      </div> {% endfor %} {% else %} <p>There are no books added - please add some using the form above.</p> {% endif %} </div> {% else %} <p>You can't add a book until you've added some authors!</p> {% endif %}
-  </div>
-</div> {% endblock %}
+		{% else %}
+		<p>You can't add a book until you've added some authors!</p>
+		{% endif %}
+	</div>
+</div>
+
+{% endblock %}

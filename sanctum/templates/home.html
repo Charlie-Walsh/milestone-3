@@ -1,12 +1,17 @@
-{% extends 'base.html' %} {% block content %} <div class="row">
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
     <div class="col6 heading">
-      <h1>Welcome to The Sanctum!</h1>
+        <h1>Welcome to The Sanctum!</h1>
     </div>
     <div class="col6" id="intro">
-      <p>Enter the library to browse or leave a review for books in the Sci-Fi and Fantasy genres.</p>
-      <p>Can't find what you're looking for? Add the author if they are not in the list, then the book and leave a review!</p>
+        <p>Enter the library to browse or leave a review for books in the Sci-Fi and Fantasy genres.</p>
+        <p>Can't find what you're looking for? Add the author if they are not in the list, then the book and leave a review!</p>
     </div>
     <div class="col6 enter">
-      <a class="waves-effect waves-light btn-large" href="{{ url_for('books') }}">Browse</a>
+        <a class="waves-effect waves-light btn-large" href="{{ url_for('books') }}">Browse</a>
     </div>
-  </div> {% endblock %}
+</div>
+
+{% endblock %}

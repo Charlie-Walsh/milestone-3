@@ -1,12 +1,34 @@
-{% extends 'base.html' %} {% block content %} <h2 class="heading">Delete Review</h2>
+{% extends 'base.html' %} 
+{% block content %}
+
+<h2 class="heading">Delete Review</h2>
+
 <div class="container" id="delete-review-form">
-  <div class="row"> {% if review %} <form class="col s12" method="POST" action="{{ url_for('delete_review', review_id=review.id) }}">
-      <p class="text-center"> Are you sure you wish to delete the review for {{review.title.book_title}}? </p>
-      <div class="row">
-        <div class="submit">
-          <button class="btn waves-effect waves-light" type="submit" name="action">Yes! <i class="material-icons right"></i>
-          </button>
-        </div>
-      </div>
-    </form> {% else %} <p>Sorry - review not found!</p> {% endif %} </div>
-</div> {% endblock %}
+	<div class="row">
+		{% if review %}
+		<form
+			class="col s12"
+			method="POST"
+			action="{{ url_for('delete_review', review_id=review.id) }}"
+		>
+			<p class="text-center">
+				Are you sure you wish to delete the review for {{review.title.book_title}}?
+			</p>
+			<div class="row">
+				<div class="submit">
+					<button
+						class="btn waves-effect waves-light"
+						type="submit"
+						name="action"
+						>Yes!
+						<i class="material-icons right"></i>
+					</button>
+				</div>
+			</div>
+		</form>
+		{% else %}
+		<p>Sorry - review not found!</p>
+		{% endif %}
+	</div>
+</div>
+{% endblock %}

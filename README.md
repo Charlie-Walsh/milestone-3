@@ -1,6 +1,6 @@
 <h1 style="text-align:center">The Sanctum</h1>
 
-The Sanctum is a place for bookworms like myself to read and add reviews for sci-fi and fantasy novels. Anyone looking to find a new series or just a short story can find guidence here or provide a helpful review for someone looking for something new. This will help people make an informed decision when deciding whether or not to purchase a book they may have had their eye on for a while or discover a new author they will really enjoy. In my own personal experience I have mostly chosen what books i read by peer recommendation or word of mouth. This space will allow for that on a grander scale available to anyone and everyone.
+The Sanctum is a place for bookworms like myself to read and add reviews for sci-fi and fantasy novels. Anyone looking to find a new series or just a short story can find guidence here or provide a helpful review for someone looking for something new. This will help people make an informed decision when deciding whether or not to purchase a book they may have had their eye on for a while or discover a new author they will really enjoy. In my own personal experience I have mostly chosen what books I read by peer recommendation or word of mouth. This space will allow for that on a grander scale available to anyone and everyone.
 <hr>
 
 # User Experience
