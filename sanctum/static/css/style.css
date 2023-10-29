@@ -58,8 +58,14 @@ body {
     margin: 0 auto;
 }
 
-.btn.btn-large {
-    color: orange;
+.btn {
+    color: beige;
+    font-weight: bold;
+}
+
+.btn-large {
+    color: beige;
+    font-weight: bold;
 }
 
 .label-colour {
