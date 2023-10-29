@@ -1,54 +1,30 @@
-{% extends 'base.html' %} {% block content %}
-
-<h1 class="heading">Authors</h1>
+{% extends 'base.html' %} {% block content %} <h1 class="heading">Authors</h1>
 <p class="text-center">Please check the list before adding an author.</p>
 <div class="container" id="author-form">
-	<div class="row">
-		<h2 class="sub-heading">Add an Author</h2>
-		<form class="col s12" method="POST" action="{{ url_for('authors') }}">
-			<div class="row">
-				<div class="input-field col s12 no-padding">
-					<input
-						placeholder="First Name"
-						id="author_fname"
-						name="author_fname"
-						type="text"
-						class="validate"
-					/>
-					<label for="author_fname">First Name</label>
-				</div>
-				<div class="input-field col s12 no-padding">
-					<input
-						id="author_lname"
-						placeholder="Last Name"
-						name="author_lname"
-						type="text"
-						class="validate"
-					/>
-					<label for="author_lname">Last Name</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="submit">
-					<button
-						class="btn waves-effect waves-light"
-						type="submit"
-						name="action"
-						>Submit
-						<i class="material-icons right"></i>
-					</button>
-				</div>
-			</div>
-		</form>
-	</div>
-	<div class="row">
-		{% if authors %} {% for author in authors %}
-		<p class="author card-panel teal lighten-2">
-			<span><strong>{{author.author_fname}} {{author.author_lname}}</strong></span>
-		</p>
-		{% endfor %} {% else %}
-		<p>There are no authors added - please add some using the form above.</p>
-		{% endif %}
-	</div>
-</div>
-{% endblock %}
+  <div class="row">
+    <h2 class="sub-heading">Add an Author</h2>
+    <form class="col s12" method="POST" action="{{ url_for('authors') }}">
+      <div class="row">
+        <div class="input-field col s12 no-padding">
+          <input placeholder="First Name" id="author_fname" name="author_fname" type="text" class="validate" />
+          <label for="author_fname">First Name</label>
+        </div>
+        <div class="input-field col s12 no-padding">
+          <input id="author_lname" placeholder="Last Name" name="author_lname" type="text" class="validate" />
+          <label for="author_lname">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="submit">
+          <button class="btn waves-effect waves-light" type="submit" name="action">Submit <i class="material-icons right"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row"> {% if authors %} {% for author in authors %} <p class="author card-panel teal lighten-2">
+      <span>
+        <strong>{{author.author_fname}} {{author.author_lname}}</strong>
+      </span>
+    </p> {% endfor %} {% else %} <p>There are no authors added - please add some using the form above.</p> {% endif %} </div>
+</div> {% endblock %}

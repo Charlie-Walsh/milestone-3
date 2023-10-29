@@ -1,66 +1,64 @@
-{% extends 'base.html' %}
-{% block content %}
-
-<h2 class="heading">Write a Review</h2>
+{% extends 'base.html' %} {% block content %} <h2 class="heading">Write a Review</h2>
 <p class="text-center">Choose your book from the list below, rate and review.</p>
 <div class="container" id="review-form">
-  <div class="row">
-    {% if books %}
-      <form class="col s12" method="POST" action="{{ url_for('reviews') }}">
-        <div class="row">
-          <div class="input-field col s12">
-            <select id = "book_id" name = "book_id">
-              {% for book in books %}
-                <option value = {{book.id}}>{{book.book_title}}</option>
-              {% endfor %}
-            </select>
-            <label for = "book_id">
-              Book Title
-            </label>
-          </div>
+  <div class="row"> {% if books %} <form class="col s12" method="POST" action="{{ url_for('reviews') }}">
+      <div class="row">
+        <div class="input-field col s12">
+          <select id="book_id" name="book_id"> {% for book in books %} <option value={{book.id}}>{{book.book_title}}</option> {% endfor %} </select>
+          <label for="book_id"> Book Title </label>
         </div>
-        <div class="input-field col s6 no-padding">
-          <select id = "rating" name = "rating">
-            <option value="" disabled selected>1-5</option>
-            <option value="1" name="rating">1</option>
-            <option value="2" name="rating">2</i></option>
-            <option value="3" name="rating">3</option>
-            <option value="4" name="rating">4</i></option>
-            <option value="5" name="rating">5</i></option>
-          </select>
-          <label for = "rating">Rating</label>
+      </div>
+      <div class="input-field col s6 no-padding">
+        <select id="rating" name="rating">
+          <option value="" disabled selected>1-5</option>
+          <option value="1" name="rating">1</option>
+          <option value="2" name="rating">2 </i>
+          </option>
+          <option value="3" name="rating">3</option>
+          <option value="4" name="rating">4 </i>
+          </option>
+          <option value="5" name="rating">5 </i>
+          </option>
+        </select>
+        <label for="rating">Rating</label>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="review" name="review" class="materialize-textarea"></textarea>
+          <label for="review">Review</label>
         </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <textarea id="review" name="review"class="materialize-textarea"></textarea>
-            <label for="review">Review</label>
-          </div>
+      </div>
+      <div class="row">
+        <div class="submit">
+          <button class="btn waves-effect waves-light" type="submit" name="action">Submit <i class="material-icons right"></i>
+          </button>
         </div>
-        <div class="row">
-          <div class="submit">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-              <i class="material-icons right"></i>
-            </button>
-          </div>
+      </div>undefined
+    </form>undefined<h2 class="sub-heading">Reviews</h2> {% if reviews %} {% for review in reviews %} undefined<div class="card-panel teal lighten-2">
+      <p>Review for {{review.title.book_title}}</p>
+      <p>
+        <a class="crud" href="{{ url_for('review', review_id=review.id) }}">View</a>
+        <a class="crud" href="{{ url_for('edit_review', review_id=review.id) }}">Edit</a>
+        <a class="crud" href="{{ url_for('delete_review', review_id=review.id) }}">Delete</a>
+      </p>undefined
+    </div> {% endfor %} {% else %} undefined<p>No reviews - please add some above.</p> {% endif %} {% else %} undefined<p>You must add some books in order to create reviews!</p> {% endif %} undefined</div>undefined
+</div> {% endblock %}{% extends 'base.html' %} {% block content %} undefined<h2 class="heading">Write a Review</h2>undefined<p class="text-center">Choose your book from the list below, rate and review.</p>undefined<div class="container" id="review-form">undefined<div class="row"> {% if books %} undefined<form class="col s12" method="POST" action="{{ url_for('reviews') }}">
+      <div class="row">
+        <div class="input-field col s12">
+          <select id="book_id" name="book_id"> {% for book in books %} <option value={{book.id}}>{{book.book_title}}</option> {% endfor %} </select>
+          <label for="book_id"> Book Title </label>
         </div>
-      </form>
-      <h2 class="sub-heading">Reviews</h2>
-      {% if reviews %}
-        {% for review in reviews %}
-        <div class="card-panel teal lighten-2">
-          <p>Review for {{review.title.book_title}}</p>
-          <p><a class="crud" href="{{ url_for('review', review_id=review.id) }}">View</a>
-          <a class="crud" href="{{ url_for('edit_review', review_id=review.id) }}">Edit</a>
-          <a class="crud" href="{{ url_for('delete_review', review_id=review.id) }}">Delete</a></p>
-        </div>
-        {% endfor %}
-      {% else %}
-        <p>No reviews - please add some above.</p>
-      {% endif %}
-      
-    {% else %}
-    <p>You must add some books in order to create reviews!</p>
-    {% endif %}
-  </div>
-</div>
-{% endblock %}
+      </div>
+      <div class="input-field col s6 no-padding">
+        <select id="rating" name="rating">
+          <option value="" disabled selected>1-5</option>
+          <option value="1" name="rating">1</option>
+          <option value="2" name="rating">2 </i>
+          </option>
+          <option value="3" name="rating">3</option>
+          <option value="4" name="rating">4 </i>
+          </option>
+          <option value="5" name="rating">5 </i>undefined</option>undefined
+        </select>undefined<label for="rating">Rating</label>undefined
+      </div>undefined<div class="row">undefined<div class="input-field col s12">undefined<textarea id="review" name="review" class="materialize-textarea"></textarea>undefined<label for="review">Review</label>undefined</div>undefined</div>undefined<div class="row">undefined<div class="submit">undefined<button class="btn waves-effect waves-light" type="submit" name="action">Submit <i class="material-icons right"></i>undefined</button>undefined</div>undefined</div>undefined
+    </form>undefined<h2 class="sub-heading">Reviews</h2> {% if reviews %} {% for review in reviews %} undefined<div class="card-panel teal lighten-2">undefined<p>Review for {{review.title.book_title}}</p>undefined<p>undefined<a class="crud" href="{{ url_for('review', review_id=review.id) }}">View</a>undefined<a class="crud" href="{{ url_for('edit_review', review_id=review.id) }}">Edit</a>undefined<a class="crud" href="{{ url_for('delete_review', review_id=review.id) }}">Delete</a>undefined</p>undefined</div> {% endfor %} {% else %} undefined<p>No reviews - please add some above.</p> {% endif %} {% else %} undefined<p>You must add some books in order to create reviews!</p> {% endif %} undefined</div>undefined</div> {% endblock %}
