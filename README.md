@@ -71,6 +71,10 @@ As I've gotten deeper into the creation of this site I have had to make a few ch
 
 # Testing
 
+### Lighthouse Score
+
+![Lighthouse Score](/sanctum/static/images/lighthouse-score.png)
+
 ## Bugs
 
  - Pylint bug encountered using flask-sqlAlchemy giving "Instance of 'SQLAlchemy' has no 'Column' member" error. This is a known issue and requires you to crash the plug in to remove it. I didn't want to risk messing with this too much so I am just ignoring it so far. I could put a #noqa comment on every one but that seems a bit redundant for now.
@@ -80,7 +84,7 @@ As I've gotten deeper into the creation of this site I have had to make a few ch
  - After deploying to Heroku app crashes. According to the log it appears to be looking for a favicon.<br>
  'at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=the-sanctum-cw.herokuapp.com request_id=4285cfd9-7a50-4e16-8a67-f039d5b80761 fwd="92.233.104.68" dyno= connect= service= status=503 bytes= protocol=https'
 
- - db.creat_all() is throwing a RunTimeError: Working outside if application context. *Solution* - Installed previous version of flask-sqlalchemy psycopg2.
+ - db.creat_all() is throwing a RunTimeError: Working outside of application context. *Solution* - Installed previous version of flask-sqlalchemy psycopg2.
 
  - author-lname returning null value, causing an error due to null constraint. *Solution attempt* - I was commiting the form session to the database prematurely after each entry, causing author-lname to be a null value. Refactored POST code to commit at the end only. After testing, author_fname is now causing a null value. Further debug needed.
  

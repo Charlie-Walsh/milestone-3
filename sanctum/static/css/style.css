@@ -58,6 +58,14 @@ body {
     margin: 0 auto;
 }
 
+.btn.btn-large {
+    color: beige;
+}
+
+.label-colour {
+    color: teal;
+}
+
 @media screen and (max-width: 576px) {
     .sub-heading{
         text-align: center;
