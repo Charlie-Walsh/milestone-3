@@ -113,6 +113,12 @@ As I've gotten deeper into the creation of this site I have had to make a few ch
 
 ![Lighthouse Score](/sanctum/static/images/lighthouse-score.png)
 
+### Responsiveness
+
+![Large Screen](/sanctum/static/images/large-screen.png)
+
+![Small Screen 1](/sanctum/static/images/small-screen1.png) ![Small Screen 2](/sanctum/static/images/small-screen2.png.png)
+
 <hr>
 
 # Deployment
