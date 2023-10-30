@@ -105,6 +105,9 @@ As I've gotten deeper into the creation of this site I have had to make a few ch
 |                |                                              |                                                                           | HTML Validated.                                                                                                                                                                                 | N/A                                                                                                                                                                                            |
 |                | CSS Verified                                 | Run through W3 validation                                                 | CSS Validated.                                                                                                                                                                                  | N/A                                                                                                                                                                                            |
 |                | Python PEP8 compliant                        | Python files put through pythonchecker.com                                | Meets PEP8 standards for Python                                                                                                                                                                 | N/A              
+### W3 Validation Example
+
+![Validation Example](/sanctum/static/images/w3-html-validation.png)
 
 ### Lighthouse Score
 
