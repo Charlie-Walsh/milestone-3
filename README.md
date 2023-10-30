@@ -1,6 +1,9 @@
 <h1 style="text-align:center">The Sanctum</h1>
 
 The Sanctum is a place for bookworms like myself to read and add reviews for sci-fi and fantasy novels. Anyone looking to find a new series or just a short story can find guidence here or provide a helpful review for someone looking for something new. This will help people make an informed decision when deciding whether or not to purchase a book they may have had their eye on for a while or discover a new author they will really enjoy. In my own personal experience I have mostly chosen what books I read by peer recommendation or word of mouth. This space will allow for that on a grander scale available to anyone and everyone.
+
+The value of this information is measured in time and money. As the library grows with reviews and books, the user will have access to both similar and differing opinions to help them decide if a particular story is valuable to them and if it is worth the asking price in their eyes. They can then share their own experience to help inform those that follow.
+
 <hr>
 
 # User Experience
@@ -117,7 +120,8 @@ As I've gotten deeper into the creation of this site I have had to make a few ch
 
 ![Large Screen](/sanctum/static/images/large-screen.png)
 
-![Small Screen 1](/sanctum/static/images/small-screen1.png) ![Small Screen 2](/sanctum/static/images/small-screen2.png.png)
+![Small Screen 1](/sanctum/static/images/small-screen1.png)
+![Small Screen 2](/sanctum/static/images/small-screen2.png)
 
 <hr>
 
