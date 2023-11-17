@@ -6,6 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 if os.path.exists("env.py"):
     import env
 
+
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 
@@ -19,7 +20,4 @@ else:
 
 db = SQLAlchemy(app)
 
-
-def create_app():
-    from sanctum import routes
-    return app
+from sanctum import routes
