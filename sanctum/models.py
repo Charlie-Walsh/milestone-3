@@ -5,7 +5,11 @@ class Title(db.Model):
     # schema for Title model
     id = db.Column(db.Integer, primary_key=True)
     book_title = db.Column(db.String(50), unique=True, nullable=False)
-    author_id = db.Column(db.Integer, db.ForeignKey("author.id"), nullable=False)
+    author_id = db.Column(
+        db.Integer,
+         db.ForeignKey("author.id"),
+          nullable=False
+    )
     reviews = db.relationship(
         "Review", backref="title", cascade="all, delete", lazy=True
     )
